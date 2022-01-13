@@ -1,0 +1,27 @@
+<div class="registration">
+    <br>
+    <h1 style="color:darkblue">Product Home</h1>
+    <br>
+    <div class="productform" >
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Product_Name</th>
+            </tr>
+
+            <% @products.each do |product| %>
+                <tr>
+                    <th><%= product.id %></th>
+                    <th><a href="<%= product_path(product) %>">
+                        <%= product.product_name %>
+                    </a></th>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+
+    <br>
+    <a class="btn btn-info" href="<%= new_product_path %>" >
+        Add New Product
+    </a>
+</div>
