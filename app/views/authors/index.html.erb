@@ -1,0 +1,62 @@
+<div class="registration">
+    <br>
+    <h1 style="color:darkblue">Author Home</h1>
+    <br>
+    <div class="productform" >
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First_Name</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+
+            <% @authors.each do |author| %>
+                <tr>
+                    <th><%= author.id %></th>
+                    <th><a href="<%= author_path(author) %>">
+                        <%= author.first_name %>
+                    </a></th>
+                    <th><a class="btn btn-info" style="background-color:green; color:white" href="<%= edit_author_path(author) %>">
+                            Update
+                            </a></th>
+                    <th><%= link_to "Delete", author_path(author), class:"btn btn-danger", data: {
+                            turbo_method: :delete,
+                            turbo_confirm: "Are you sure?" 
+                        } %></th>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+
+    <br>
+    <a class="btn btn-info" href="<%= new_author_path %>" >
+        register New Author
+    </a>
+    <br>
+
+    <%# =================        Book      ===================================== %>
+
+    <h2 style="color:darkblue">Author-Book</h2>
+    <br>
+    <div class="productform" >
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Author_id</th>
+            </tr>
+
+            <% @books.each do |book| %>
+                <tr>
+                    <th><%= book.id %></th>
+                    <th><%= book.name %></th>
+                    <th><%= book.price %></th>
+                    <th><%= book.author_id %></th>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+
+</div>

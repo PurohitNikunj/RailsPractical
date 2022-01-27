@@ -1,0 +1,65 @@
+<div class="registration">
+  <br>
+  <h1 style="color:Darkblue">Author-Info</h1>
+  <br>
+  <div class="productform" >
+    <table>
+      <tr>
+      <th>ID</th>
+        <th>First_Name</th>
+        <th>Last_Name</th>
+        <th>DOB</th>
+        <th>E-mail</th>
+      </tr>
+
+      <tr>
+        <th><%= @author.id %></th>
+        <th><%= @author.first_name %></th>
+        <th><%= @author.last_name %></th>
+        <th><%= @author.dob %></th>
+        <th><%= @author.email %></th>
+      </tr>
+    </table>
+  </div>
+<br>
+  
+  <%= link_to "Author Home", authors_path, class: "btn btn-info" %>
+  <br>
+
+  <%# ===================    Book   ============================= %>
+
+  <h2><%= @author.first_name %>'s Books</h2>
+  <div class="productform" >
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+
+      <% @author.books.each do |book| %>
+          <tr>
+            <th><%= book.id %></th>
+            <th><%= book.name %></th>
+            <th><%= book.price %></th>
+            <th><a class="btn btn-info" style="background-color:green; color:white" href="/books/edit/<%= book.id %>">
+                            Update
+                  </a></th>  
+            <th><%= link_to "Delete", book_path(book), class:"btn btn-danger", data: {
+                            turbo_method: :delete,
+                            turbo_confirm: "Are you sure?" 
+                        } %></th>  
+          </tr>
+        <% end %>
+    </table>
+    
+    </div>
+    <br>
+    <a class="btn btn-info" href="/books/new/<%= @author.id %>" >
+        Publish New Book
+    </a>
+  
+
+</div>

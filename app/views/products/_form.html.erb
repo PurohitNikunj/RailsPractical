@@ -1,4 +1,7 @@
 <%= form_with html: {class: 'productform'}, model: product  do |f|  %>
+    <%# <%= f.action %>
+    <%= f %>
+
     <div class="mb-3">
         <%= f.label :product_name %>
         <%= f.text_field :product_name, class: "form-control", placeholder: "for ex. soap,pen" %>

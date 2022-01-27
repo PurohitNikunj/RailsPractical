@@ -14,7 +14,6 @@ class ProductsController < ApplicationController
   
   def create
     @new_product = Product.new(product_params)
-
     if @new_product.save
       redirect_to @new_product
     else
@@ -30,7 +29,7 @@ class ProductsController < ApplicationController
     @edit_product = Product.find(params[:id])
 
     if @edit_product.update(product_params)
-      redirect_to @edit_product
+      redirect_to 
     else
       render :edit, status: :unprocessable_entity
     end

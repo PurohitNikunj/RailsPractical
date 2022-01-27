@@ -13,10 +13,14 @@
     width: 50%;
 }
 
-
 .registration{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.disable{
+    pointer-events:none;
+    background:lightgrey;
 }

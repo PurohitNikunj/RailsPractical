@@ -1,0 +1,47 @@
+<%= form_with html: {class: 'productform'}, model: author  do |f|  %>
+
+    <div class="mb-3">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control", placeholder: "for ex. Ram,Shyam" %>
+        <% author.errors.full_messages_for(:first_name).each do |message| %>
+        <div class="error-msg">
+            <%= message %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control", placeholder: "for ex. Ram,Shyam" %>
+        <% author.errors.full_messages_for(:last_name).each do |message| %>
+        <div class="error-msg">
+            <%= message %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.label :dob %>
+        <%= f.date_field :dob, class: "form-control" %>
+        <% author.errors.full_messages_for(:dob).each do |message| %>
+        <div class="error-msg">
+            <%= message %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.label :email %>
+        <%= f.text_field :email, class: "form-control", placeholder: "string@string.string" %>
+        <% author.errors.full_messages_for(:email).each do |message| %>
+        <div class="error-msg">
+            <%= message %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.submit %>
+    </div>
+
+<% end %>

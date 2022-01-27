@@ -1,0 +1,36 @@
+
+<%# ================    Book form for create and update    ================= %>
+
+<%= form_with html: {class: 'productform'}, model: book  do |f|  %>
+
+    <div class="mb-3">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", placeholder: "for ex. Safari,Zindagi" %>
+        <% book.errors.full_messages_for(:name).each do |message| %>
+        <div class="error-msg">
+            <%= message %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.label :price %>
+        <%= f.text_field :price, class: "form-control"%>
+        <% book.errors.full_messages_for(:price).each do |message| %>
+        <div class="error-msg">
+            <%= message %>
+        </div>
+        <% end %>
+    </div>
+    
+    <div class="mb-3">
+        <%= f.label :Author_id %>
+        <%= f.text_field :author_id,  class: "form-control disable"%>
+    </div>
+
+
+    <div class="mb-3">
+        <%= f.submit %>
+    </div>
+
+<% end %>
