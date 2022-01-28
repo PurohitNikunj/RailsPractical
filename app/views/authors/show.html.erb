@@ -3,6 +3,9 @@
   <h1 style="color:Darkblue">Author-Info</h1>
   <br>
   <div class="productform" >
+    <% if @author.image.attached? %>
+      <p><%= image_tag @author.image %></p>
+    <% end %>
     <table>
       <tr>
       <th>ID</th>
@@ -13,11 +16,11 @@
       </tr>
 
       <tr>
-        <th><%= @author.id %></th>
-        <th><%= @author.first_name %></th>
-        <th><%= @author.last_name %></th>
-        <th><%= @author.dob %></th>
-        <th><%= @author.email %></th>
+        <td><%= @author.id %></td>
+        <td><%= @author.first_name %></td>
+        <td><%= @author.last_name %></td>
+        <td><%= @author.dob %></td>
+        <td><%= @author.email %></td>
       </tr>
     </table>
   </div>
@@ -31,19 +34,25 @@
   <h2><%= @author.first_name %>'s Books</h2>
   <div class="productform" >
     <table>
+    <% @author.books.each do |book| %>
+        
       <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Price</th>
         <th>Update</th>
         <th>Delete</th>
+        <th rowspan="2" style="justify-self:center;">
+          <% if book.images.attached? %>
+            <%= image_tag book.images %>
+          <% end %>
+        </th>
       </tr>
 
-      <% @author.books.each do |book| %>
           <tr>
-            <th><%= book.id %></th>
-            <th><%= book.name %></th>
-            <th><%= book.price %></th>
+            <td><%= book.id %></td>
+            <td><%= book.name %></td>
+            <td><%= book.price %></td>
             <th><a class="btn btn-info" style="background-color:green; color:white" href="/books/edit/<%= book.id %>">
                             Update
                   </a></th>  
@@ -61,5 +70,4 @@
         Publish New Book
     </a>
   
-
 </div>
