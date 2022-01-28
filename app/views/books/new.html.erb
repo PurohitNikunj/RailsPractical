@@ -1,0 +1,8 @@
+<div class="registration">
+<br>
+<h1 style="color:Darkblue">Book Publision</h1>
+<br>
+<%= render "form", book: @new_book %>
+<br>
+<%= link_to "Back", author_path(@new_book.author_id), class: "btn btn-info" %>
+</div>

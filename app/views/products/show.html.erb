@@ -1,0 +1,35 @@
+<div class="registration">
+  <br>
+  <h1 style="color:Darkblue">Product-Info</h1>
+  <br>
+  <div class="productform" >
+    <table>
+      <tr>
+      <th>ID</th>
+        <th>Product_Name</th>
+        <th>Price</th>
+        <th>Qty.</th>
+      </tr>
+
+      <tr>
+        <th><%= @product.id %></th>
+        <th><%= @product.product_name %></th>
+        <th><%= @product.price %></th>
+        <th><%= @product.qty %></th>
+      </tr>
+    </table>
+  </div>
+<br>
+  <a class="btn btn-info" href="<%= edit_product_path(@product) %>">
+  Update <%= @product.product_name %>
+  </a>
+<br>
+
+  <%= link_to "Delete", product_path(@product), class:"btn btn-danger", data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?" 
+  } %>
+<br>
+
+  <%= link_to "Home", root_path, class: "btn btn-info" %>
+</div>

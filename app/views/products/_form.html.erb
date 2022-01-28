@@ -1,0 +1,39 @@
+<%= form_with html: {class: 'productform'}, model: product  do |f|  %>
+    <%# <%= f.action %>
+    <%= f %>
+
+    <div class="mb-3">
+        <%= f.label :product_name %>
+        <%= f.text_field :product_name, class: "form-control", placeholder: "for ex. soap,pen" %>
+        <% product.errors.full_messages_for(:product_name).each do |message| %>
+        <div class="error-msg">
+            <%= message %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.label :price %>
+        <%= f.text_field :price, class: "form-control", placeholder: "for ex. 10/250/5000" %>
+        <% product.errors.full_messages_for(:price).each do |message| %>
+        <div class="error-msg">
+            <%= message %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.label :qty %>
+        <%= f.text_field :qty, class: "form-control", placeholder: "for ex. 10/15/100/200" %>
+        <% product.errors.full_messages_for(:qty).each do |message| %>
+        <div class="error-msg">
+            <%= message %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.submit %>
+    </div>
+
+<% end %>

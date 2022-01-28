@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # get 'books/index'
+  get '/books/new/:id', to: "books#new"
+  get 'books/show'
+  get 'books/edit/:id', to: "books#edit"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root "products#index"
+  resources :products
+  resources :authors 
+  resources :books
+
 end
