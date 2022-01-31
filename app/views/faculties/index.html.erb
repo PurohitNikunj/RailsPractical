@@ -1,0 +1,35 @@
+<div class="body-container">
+
+    <div class="heading">
+        <h1>Faculty Home</h1>
+    </div>
+
+    <div class="table-form">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+
+            <% @faculties.each do |faculty| %>
+            <tr>
+                <td> <a href="<%= faculty_path(faculty) %>"> <%= faculty.id %> </a> </td>
+                <td><%= faculty.first_name %></td>
+                <td><%= faculty.last_name %></td>
+                <td> <a href="<%= edit_faculty_path(faculty) %>" class="btn btn-info"> Update </td>
+                <td> <%= link_to "Delete", faculty_path(faculty), class:"btn btn-danger", data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?" 
+                } %> </td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+
+    <div class="bottom-button">
+        <%= link_to "Register New Faculty", new_faculty_path, class:"btn btn-info" %>
+    </div>
+</div>

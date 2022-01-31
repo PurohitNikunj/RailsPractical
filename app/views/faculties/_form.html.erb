@@ -1,0 +1,80 @@
+
+    <%= form_with html: {class: 'productform'}, model: faculty do |f| %>
+
+        <div class="mb-3">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, class: "form-control"%>
+            <% faculty.errors.full_messages_for(:first_name).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                <% faculty.errors.clear%>
+                <% break %>
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, class: "form-control" %>
+            <% faculty.errors.full_messages_for(:last_name).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                <% faculty.errors.clear%>
+                <% break %>
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :designation %>
+            <%= f.text_field :designation, class: "form-control" %>
+            <% faculty.errors.full_messages_for(:designation).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                <% faculty.errors.clear%>
+                <% break %>
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :birthdate %>
+            <%= f.date_field :birthdate, class: "form-control" %>
+            <% faculty.errors.full_messages_for(:birthdate).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                <% faculty.errors.clear%>
+                <% break %>
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :emailid %>
+            <%= f.text_field :emailid, class: "form-control" %>
+            <% faculty.errors.full_messages_for(:emailid).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                <% faculty.errors.clear%>
+                <% break %>
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :phoneno %>
+            <%= f.text_field :phoneno, class: "form-control" %>
+            <% faculty.errors.full_messages_for(:phoneno).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                <% faculty.errors.clear%>
+                <% break %>
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.submit %>
+        </div>
+        
+    <% end %>

@@ -1,0 +1,28 @@
+.body-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading{
+    margin-top: 3.5%;
+    height: 10%;
+    padding-bottom: 3%;
+}
+
+.heading > h1{
+    color: darkblue;
+}
+
+.table-form{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bottom-button{
+    padding-top: 3%;
+}
