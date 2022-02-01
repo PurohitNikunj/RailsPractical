@@ -1,0 +1,31 @@
+<div class="body-container">
+
+    <div class="heading">
+        <h1>Student-info</h1>
+    </div>
+    
+    <div class="table-form">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+                <th>DOB</th>
+                <th>Department</th>
+            </tr>
+
+            <tr>
+                <td> <%= @student.id %> </td>
+                <td><%= @student.first_name %></td>
+                <td><%= @student.last_name %></td>
+                <td><%= @student.birthdate %></td>
+                <td><%= @student.department %></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="bottom-button">
+        <%= link_to "Student Home", students_path, class:"btn btn-info" %>
+    </div>
+
+</div>

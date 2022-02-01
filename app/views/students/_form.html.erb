@@ -1,0 +1,64 @@
+
+    <%= form_with html: {class: 'productform'}, model: student do |f| %>
+
+        <div class="mb-3">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, class: "form-control"%>
+            <% student.errors.full_messages_for(:first_name).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, class: "form-control" %>
+            <% student.errors.full_messages_for(:last_name).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :department %>
+            <%= f.text_field :department, class: "form-control" %>
+            <% student.errors.full_messages_for(:department).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.label :birthdate %>
+            <%= f.date_field :birthdate, class: "form-control" %>
+            <% student.errors.full_messages_for(:birthdate).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                
+            <% end %>
+        </div>
+
+        <a href="/terms">Terms & Condition</a>
+
+        <div class="mb-3">
+            <%= f.label :agree %>
+            <%= f.check_box :agree %>
+            <% student.errors.full_messages_for(:agree).each do |msg| %>
+                <div class="error-msg">
+                    <%= msg %>
+                </div>
+                
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= f.submit %>
+        </div>
+    <% end %>

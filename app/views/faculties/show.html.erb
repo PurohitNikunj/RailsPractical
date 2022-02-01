@@ -1,0 +1,35 @@
+<div class="body-container">
+
+    <div class="heading">
+        <h1>Faculty-info</h1>
+    </div>
+    
+    <div class="table-form">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+                <th>DOB</th>
+                <th>Designation</th>
+                <th>Phoneno</th>
+                <th>Email</th>
+            </tr>
+
+            <tr>
+                <td> <%= @faculty.id %> </td>
+                <td><%= @faculty.first_name %></td>
+                <td><%= @faculty.last_name %></td>
+                <td><%= @faculty.birthdate %></td>
+                <td><%= @faculty.designation %></td>
+                <td><%= @faculty.phoneno %></td>
+                <td><%= @faculty.emailid %></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="bottom-button">
+        <%= link_to "Faculty Home", faculties_path, class:"btn btn-info" %>
+    </div>
+
+</div>
