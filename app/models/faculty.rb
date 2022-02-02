@@ -13,4 +13,26 @@ class Faculty < ApplicationRecord
         25),(Date.today.month),(Date.today.day))
     end
 
+
+    # =======> CALL-BACKS <============
+    after_initialize do |student|
+        puts "you have initialized #{student.first_name}"
+    end
+
+    after_find do |student|
+        puts "you have found #{student.first_name}"
+    end
+
+    after_validation :date_validation
+    after_save :for_email 
+
+    private
+    def date_validation
+        d = Date.today.year-self.birthdate.year
+        puts "You are #{d} years old"
+    end
+
+    def for_email
+        puts "Your email is validated and saved to db"
+    end
 end

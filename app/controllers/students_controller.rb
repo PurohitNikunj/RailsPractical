@@ -18,6 +18,8 @@ class StudentsController < ApplicationController
 
   def create
     @new_student = Student.new(student_params)
+    @new_student.skip_any_callback = false
+
     if @new_student.save
       redirect_to 
     else
